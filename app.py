@@ -22,6 +22,9 @@ import streamlit as st
 # Import segmentation models.
 import segmentation_models_pytorch as smp
 
+# Download the trained model from Hugging Face.
+from huggingface_hub import hf_hub_download
+
 
 # ============================================================
 # PAGE CONFIGURATION
@@ -547,7 +550,11 @@ html, body, [class*="css"] {
 # ============================================================
 
 # Define the trained model file.
-MODEL_PATH = "best_deeplabv3plus.pth"
+# Download the trained model from Hugging Face and get its local path.
+MODEL_PATH = hf_hub_download(
+    repo_id="shreyas-kocheri/deeplabv3plus-deepglobe",
+    filename="best_deeplabv3plus.pth"
+)
 
 # Define the seven DeepGlobe classes.
 CLASS_NAMES = [
