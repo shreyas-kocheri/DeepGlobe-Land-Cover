@@ -1,0 +1,2 @@
+# Ignore the trained model because it is larger than GitHub's file limit
+best_deeplabv3plus.pth
